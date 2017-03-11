@@ -5,6 +5,7 @@ using UnityEngine;
 public class EmojiController : MonoBehaviour {
 	
 	public GameObject ExplosionEffect;
+	public GameObject camera;
 	private Rigidbody body;
 	private int counter = 30;
 
@@ -24,7 +25,8 @@ public class EmojiController : MonoBehaviour {
 
 	public void Explode()
 	{
-		Instantiate(ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
+		GameObject thing = Instantiate(ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
+		thing.transform.LookAt(camera.transform);
 		Destroy(gameObject);
 		Destroy(this);
 	}
