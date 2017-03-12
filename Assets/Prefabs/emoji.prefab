@@ -105,22 +105,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1863199195513600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4551ba69809444826a3f51f22156020c, type: 3}
+  m_Script: {fileID: 11500000, guid: d99a1cbbd2513486cab50060ec83b995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 100002, guid: f7efb0d9df2264096af57128df85dddb, type: 2}
-  faces:
-  - {fileID: 2800000, guid: 9fa1dfc0f2f9042ab8aef02f0d35657f, type: 3}
-  - {fileID: 2800000, guid: 9fa1dfc0f2f9042ab8aef02f0d35657f, type: 3}
-  - {fileID: 2800000, guid: 9fa1dfc0f2f9042ab8aef02f0d35657f, type: 3}
-  - {fileID: 2800000, guid: 9fa1dfc0f2f9042ab8aef02f0d35657f, type: 3}
-  - {fileID: 2800000, guid: 667c5817cb4d841758b7fc0c06ccae3f, type: 3}
-  - {fileID: 2800000, guid: 667c5817cb4d841758b7fc0c06ccae3f, type: 3}
-  - {fileID: 2800000, guid: 550f0db6734fe4587974f9222f4fdf5d, type: 3}
-  - {fileID: 2800000, guid: 550f0db6734fe4587974f9222f4fdf5d, type: 3}
-  - {fileID: 2800000, guid: c3eda3d6137ae47fb852a8e2f2e38be1, type: 3}
-  - {fileID: 2800000, guid: 554101d7405054aa3a8d51f0070f5169, type: 3}
-  destroyed: 0
 --- !u!135 &135396125853061068
 SphereCollider:
   m_ObjectHideFlags: 1

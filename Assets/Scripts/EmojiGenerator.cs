@@ -15,7 +15,7 @@ public class EmojiGenerator : MonoBehaviour {
 
 	private int randomModifier {
 		get {
-			return Random.Range(1, 15);
+			return Random.Range(1, 55);
 		}
 	}
 	
@@ -23,8 +23,8 @@ public class EmojiGenerator : MonoBehaviour {
 	{
 		Vector3 parentPosition = gameObject.transform.position;
 		List<int> modifiers = new List<int>();
-		Vector3 position = new Vector3(parentPosition.x + randomModifier, parentPosition.y + randomModifier, parentPosition.z + randomModifier);
-		GameObject created = Instantiate(emoji, position, gameObject.transform.rotation);
+		Vector3 position = new Vector3(parentPosition.x + randomModifier, parentPosition.y, parentPosition.z + randomModifier);
+		GameObject created = Instantiate(emoji, position, Random.rotation);
 	}
 
 	private void StartInterval()

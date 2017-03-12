@@ -19,27 +19,17 @@ public class EmojiController : MonoBehaviour {
 	private void SetSpeed()
 	{
 		body = gameObject.GetComponent<Rigidbody>();
-		body.velocity = new Vector3(0, 50, 20);
+		body.velocity = new Vector3(10, Random.Range(0,25), 0);
 	}
 
-	public void Explode()
+	void BeforeDestroy()
 	{
 		Instantiate(ExplosionEffect, gameObject.transform.position, gameObject.transform.rotation);
-		Destroy(gameObject);
 		Destroy(this);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		// EXPLODE for debugging of course
-		if (counter == 0) {
-			Explode();
-		} else {
-			counter -= 1;
-		}
-
-		// Debug.Log(gameObject.transform.position.y);
-		// if(gameObject.transform.position.y<0f) Explode();
 	}
 }
