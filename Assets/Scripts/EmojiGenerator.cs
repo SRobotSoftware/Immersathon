@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EmojiGenerator : MonoBehaviour {
 
+	public float interval = 0.2f;
 	public GameObject emoji;
+    
 	private float LastGenerated;
 	private bool GameOver = false;
-	private float interval = 0.2f;
 	// Use this for initialization
 	void Start () {
 		// Parent = GetComponent<
@@ -15,7 +16,7 @@ public class EmojiGenerator : MonoBehaviour {
 
 	private int randomModifier {
 		get {
-			return Random.Range(1, 15);
+			return Random.Range(-100, 100);
 		}
 	}
 	
@@ -23,13 +24,13 @@ public class EmojiGenerator : MonoBehaviour {
 	{
 		Vector3 parentPosition = gameObject.transform.position;
 		List<int> modifiers = new List<int>();
-		Vector3 position = new Vector3(parentPosition.x + randomModifier, parentPosition.y + randomModifier, parentPosition.z + randomModifier);
-		GameObject created = Instantiate(emoji, position, gameObject.transform.rotation);
+		Vector3 position = new Vector3(parentPosition.x, parentPosition.y, parentPosition.z + randomModifier);
+		GameObject created = Instantiate(emoji, position, gameObject.transform.rotation, gameObject.transform);
 	}
 
 	private void StartInterval()
 	{
-		if(LastGenerated+interval < Time.time) // If a second has passed since the last emoji was generated
+		if(GameManager.play && LastGenerated+interval < Time.time) // If a second has passed since the last emoji was generated
 		{
 			CreateEmoji();
 			LastGenerated = Time.time;
