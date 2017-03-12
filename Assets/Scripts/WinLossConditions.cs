@@ -8,10 +8,16 @@ public class WinLossConditions : MonoBehaviour
     public bool GameOver;
     public bool Victory;
     public GameObject Flipper;
+    public Light Sun;
+    public void SunFlip()
+    {
+        Sun.transform.eulerAngles = new Vector3(270f, 0f, 0f);
+    }
+
 
     void Start()
     {
-        GameOver = true;
+        GameOver = false;
 
     }
 
@@ -19,7 +25,6 @@ public class WinLossConditions : MonoBehaviour
     {
         if (GameOver == true)
         {
-            Flipper.SunFlip();
             if (Victory == true)
             {
                 //Scene Transition to "You Win"
