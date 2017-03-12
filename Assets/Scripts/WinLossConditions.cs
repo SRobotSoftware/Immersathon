@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinLoseConditions : MonoBehaviour
+public class WinLossConditions : MonoBehaviour
 {
     public int Score;
     public bool GameOver;
     public bool Victory;
+    public GameObject Flipper;
 
     void Start()
     {
-        GameOver = false;
+        GameOver = true;
+
     }
 
     void Update()
     {
         if (GameOver == true)
         {
+            Flipper.SunFlip();
             if (Victory == true)
             {
                 //Scene Transition to "You Win"
